@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Samples
 {
 
@@ -24,20 +23,20 @@ namespace Samples
             ParamsForPrint params1 = new ParamsForPrint("Val1", 123);
             myThread1.Start(params1);
 
-/*
-            ParamsStaticPrintDelegate myDelegate = new ParamsStaticPrintDelegate(StaticPrintParametrized);
-            Thread myThread2 = new Thread(myDelegate);
-            ParamsForPrint params2 = new ParamsForPrint("Val2", 321);
-            myThread2.Start(params2);
-*/
+            /*
+                        ParamsStaticPrintDelegate myDelegate = new ParamsStaticPrintDelegate(StaticPrintParametrized);
+                        Thread myThread2 = new Thread(myDelegate);
+                        ParamsForPrint params2 = new ParamsForPrint("Val2", 321);
+                        myThread2.Start(params2);
+            */
 
             myThread1.Join();
-//            myThread2.Join();
+            //            myThread2.Join();
 
             Common.WriteSeparator();
         }
 
-        static void StaticPrint(Object? untypedParams)
+        static void StaticPrint(object? untypedParams)
         {
             if (untypedParams is ParamsForPrint)
             {
@@ -52,8 +51,7 @@ namespace Samples
 
         /*
         // Решить через наследование не получится т.к. Thread объявлен sealed
-        // Объявление такое: public sealed partial class Thread : CriticalFinalizerObject
-        // Объявление такое: public sealed partial class Thread : CriticalFinalizerObject
+        // Объявление такое: "public sealed partial class Thread : CriticalFinalizerObject"
                 class ThreadStaticPrintParametrized : Thread{
                     public Thread(ParamsStaticPrintDelegate start)
                     {

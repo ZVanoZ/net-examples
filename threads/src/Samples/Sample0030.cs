@@ -5,8 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Samples {
+namespace Samples
+{
 
     /**
      * Пример показывает как создать потоки с параметрами используя ParameterizedThreadStart
@@ -43,7 +43,7 @@ namespace Samples {
             Common.WriteSeparator();
         }
 
-        static void StaticPrint(Object? message)
+        static void StaticPrint(object? message)
         {
             Console.WriteLine($"StaticPrint: : message = {message}");
         }

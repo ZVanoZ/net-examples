@@ -5,9 +5,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Samples {
-    public class Sample0010{
+namespace Samples
+{
+    public class Sample0010
+    {
         public static void Run()
         {
             Common.WriteSeparator();
@@ -30,5 +31,5 @@ namespace Samples {
 
         }
     }
-    
+
 }

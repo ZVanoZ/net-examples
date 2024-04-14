@@ -5,24 +5,25 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+namespace Samples
+{
 
-namespace Samples {
-    public class Sample0015 {
+    /**
+     * Шаблон для копипаста
+     */
+    public class Sample0000
+    {
         public static void Run()
         {
+
             Common.WriteSeparator();
             //Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
-            Common.WriteSeparateString(typeof(Sample0015).Name);
+            Common.WriteSeparateString(typeof(Sample0000).Name);
 
-            for (int i = 0; i < 10; i++)
-            {
-                Thread.Sleep(500);      // задержка выполнения на 500 миллисекунд
-                Console.WriteLine(i);
-            }
+            Console.WriteLine("@TODO: ...");
 
             Common.WriteSeparator();
-
         }
     }
-    
+
 }
