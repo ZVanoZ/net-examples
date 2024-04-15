@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Samples
@@ -10,6 +11,7 @@ namespace Samples
 
     /**
      * Параллельные потоки с задержками.
+     * Главный поток проверяет состояние дочерних и ожидает их завершение.
      */
     public class Sample0040
     {
@@ -27,8 +29,9 @@ namespace Samples
 			{
 				ParameterizedThreadStart newDelegate = new ParameterizedThreadStart(ThreadBody);
 				Thread newThread = new Thread(newDelegate);
-				ParamsForThread newParams = new ParamsForThread(
-					"myThread-" + i,
+				newThread.Name = "myThread-" + i;
+                ParamsForThread newParams = new ParamsForThread(
+                    newThread.Name,
 					random.Next(3001, 15001),
 					random.Next(1, 1001)
 				);
@@ -36,11 +39,32 @@ namespace Samples
 				newThread.Start(newParams);
 			}
 
-			foreach (Thread thread in threads) {
-				thread.Join();
-			}
+            // -- Вместо этого
+            // thread.Join();
+            // -- Теперь проверка статусов в бесконечном цикле
+            while (true) {
+				bool isFinished = true;
+                foreach (Thread thread in threads)
+                {
+                    // Проверка статуса через побитовые операции
+                    // См. https://learn.microsoft.com/en-us/dotnet/api/system.threading.threadstate?view=net-8.0
+                    bool isThreadAlive = 0 == (thread.ThreadState & (ThreadState.Stopped | ThreadState.Aborted));
+                    if (isThreadAlive) {
+						Console.WriteLine($"MainThread: found alive thread {thread.Name}");
+						isFinished = false;
+						break;
+                    }
+                }
+				if (isFinished)
+                {
+                    Console.WriteLine("MainThread: finish - all threads has invalid status");
+                    break;
+				}
+                Console.WriteLine("MainThread: sleep...");
+                Thread.Sleep(1000);
+            }
 
-			Common.WriteSeparator();
+            Common.WriteSeparator();
         }
 
 		static void ThreadBody(object? untypedParams)
