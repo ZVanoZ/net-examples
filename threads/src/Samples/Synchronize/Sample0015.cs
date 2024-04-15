@@ -14,11 +14,16 @@ namespace Samples.Synchronize
      * 
      * Запускаем 100 потоков по 100 итераций.
      * В каждой итерации инкрементируем общий счетчик.
+     * 
      * При утсутствии конфликтов должны получить 100*100=10000
      * В реальности получаем разные значения.
      * RESULT: commonCounter=9993
      * RESULT: commonCounter=9995
      * RESULT: commonCounter=9998
+     * 
+     * Кроме того, иногда можно получить трудноуловимые конфликты которые происходят между инкриментом и считыванием значения.
+     * CONFLICT: $WORK: threadId = 60; step=21 commonCounterBefore = 1879; commonCounterAfter=1881
+     * CONFLICT: $WORK: threadId = 61; step=58 commonCounterBefore = 5532; commonCounterAfter=5534
      */
     public class Sample0015
     {
@@ -36,8 +41,7 @@ namespace Samples.Synchronize
 
             List<Thread> threads = new List<Thread>();
 
-            //int commonCounter = 0;
-            //int countThreads = 100;
+            List<string> conflicts = new List<string>();
 
             Console.WriteLine($"countThreads = {COUNT_THREAD}");
 
@@ -50,9 +54,22 @@ namespace Samples.Synchronize
                             Console.WriteLine($"BEG : threadId = {Thread.CurrentThread.ManagedThreadId}");
                             for (int j = 0; j < COUNT_ITERATION; j++)
                             {
-                                int readedCommonCounter = commonCounter;
-                                commonCounter++;
-                                Console.WriteLine($"WORK: threadId = {Thread.CurrentThread.ManagedThreadId}; step={j} readedCommonCounter = {readedCommonCounter}; commonCounter={commonCounter}");
+                                int commonCounterBefore = commonCounter;
+
+                                // Даже в этом случае возникают конфликты.
+                                // Казалось бы, операция в одну строчку и ничто не может вмешаться в процесс.
+                                // Но нет, тут тоже может возникнуть конфликт.
+                                int commonCounterAfter = ++commonCounter; 
+                                
+                                // В этом случае конфликты чаще
+                                //commonCounter++;
+                                //int commonCounterAfter = commonCounter;
+
+                                string line = $"WORK: threadId = {Thread.CurrentThread.ManagedThreadId}; step={j} commonCounterBefore = {commonCounterBefore}; commonCounterAfter={commonCounterAfter}";
+                                if (commonCounterAfter - commonCounterBefore != 1) {
+                                    conflicts.Add(line);
+                                }
+                                Console.WriteLine(line);
                                 Thread.Sleep(random.Next(10, 100));
                             }
                             Console.WriteLine($"END : threadId = {Thread.CurrentThread.ManagedThreadId}");
@@ -67,6 +84,9 @@ namespace Samples.Synchronize
 
             Console.WriteLine($"RESULT: commonCounter={commonCounter}");
 
+            conflicts.ForEach(logItem =>{
+                Console.WriteLine($"CONFLICT: ${logItem}");
+            });
             Common.WriteSeparator();
         }
     }
