@@ -15,8 +15,8 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            Common.WriteSeparateString(typeof(Sample0035).Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(typeof(Sample0035).Name);
 
             ParameterizedThreadStart delegate1 = new ParameterizedThreadStart(StaticPrint);
             Thread myThread1 = new Thread(delegate1);
@@ -33,7 +33,7 @@ namespace Samples
             myThread1.Join();
             //            myThread2.Join();
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
 
         static void StaticPrint(object? untypedParams)

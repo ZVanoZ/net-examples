@@ -11,9 +11,9 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            //Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
-            Common.WriteSeparateString(typeof(Sample0010).Name);
+            common.Common.WriteSeparator();
+            //common.Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
+            common.Common.WriteSeparateString(typeof(Sample0010).Name);
 
             // получаем текущий поток
             Thread currentThread = Thread.CurrentThread;
@@ -27,7 +27,7 @@ namespace Samples
             Console.WriteLine($"Приоритет потока: {currentThread.Priority}");
             Console.WriteLine($"Статус потока: {currentThread.ThreadState}");
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
 
         }
     }

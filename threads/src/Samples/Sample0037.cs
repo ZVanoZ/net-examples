@@ -16,15 +16,15 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            Common.WriteSeparateString(typeof(Sample0037).Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(typeof(Sample0037).Name);
 
             ThreadContext threadContext = new ThreadContext("Val1", 123);
             Thread myThread1 = new Thread(threadContext.ThreadBody);
             myThread1.Start();
             
             myThread1.Join();
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
 
         class ThreadContext

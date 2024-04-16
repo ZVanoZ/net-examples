@@ -18,8 +18,8 @@ namespace Samples
         public static void Run()
         {
 
-            Common.WriteSeparator();
-            Common.WriteSeparateString(typeof(Sample0040).Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(typeof(Sample0040).Name);
 			
 			Random random = new Random();
 
@@ -64,7 +64,7 @@ namespace Samples
                 Thread.Sleep(1000);
             }
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
 
 		static void ThreadBody(object? untypedParams)

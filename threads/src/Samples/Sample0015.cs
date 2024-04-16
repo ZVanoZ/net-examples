@@ -11,9 +11,9 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            //Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
-            Common.WriteSeparateString(typeof(Sample0015).Name);
+            common.Common.WriteSeparator();
+            //common.Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
+            common.Common.WriteSeparateString(typeof(Sample0015).Name);
 
             for (int i = 0; i < 10; i++)
             {
@@ -21,7 +21,7 @@ namespace Samples
                 Console.WriteLine(i);
             }
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
 
         }
     }

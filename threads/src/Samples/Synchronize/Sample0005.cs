@@ -18,12 +18,12 @@ namespace Samples.Synchronize
         public void Run()
         {
 
-            Common.WriteSeparator();
-            Common.WriteSeparateString(GetType().Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(GetType().Name);
 
             Console.WriteLine("@TODO: ...");
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
     }
 

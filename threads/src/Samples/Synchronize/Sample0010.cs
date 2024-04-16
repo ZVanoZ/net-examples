@@ -16,8 +16,8 @@ namespace Samples.Synchronize
         public void Run()
         {
 
-            Common.WriteSeparator();
-            Common.WriteSeparateString(GetType().Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(GetType().Name);
 
 
             int x = 0;
@@ -51,14 +51,14 @@ namespace Samples.Synchronize
                 }
             }
 
-            Common.waitThreads(threads, false);
+            common.Common.waitThreads(threads, false);
 
 //            log.ForEach(logItem =>{
 //                Console.WriteLine(logItem);
 //            });
             Console.WriteLine($"MainThread: x = {x}");
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
     }
 

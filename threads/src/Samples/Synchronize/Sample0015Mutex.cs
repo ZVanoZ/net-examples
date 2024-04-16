@@ -26,8 +26,8 @@ namespace Samples.Synchronize
         Mutex mutex = new Mutex();
         public void Run()
         {
-            Common.WriteSeparator();
-            Common.WriteSeparateString(GetType().Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(GetType().Name);
 
             Random random = new Random();
             List<Thread> threads = new List<Thread>();
@@ -66,14 +66,14 @@ namespace Samples.Synchronize
                 thread.Start();
             }
 
-            Common.waitThreads(threads, false);
+            common.Common.waitThreads(threads, false);
 
             Console.WriteLine($"RESULT: commonCounter={commonCounter}");
 
             conflicts.ForEach(logItem =>{
                 Console.WriteLine($"CONFLICT: ${logItem}");
             });
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
     }
 

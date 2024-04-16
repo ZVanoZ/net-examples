@@ -16,8 +16,8 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            Common.WriteSeparateString(typeof(Sample0030).Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(typeof(Sample0030).Name);
 
             // создаем новые потоки
             Thread myThread1 = new Thread(new ParameterizedThreadStart(Print));
@@ -40,7 +40,7 @@ namespace Samples
             myThread3.Join();
             myThread4.Join();
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
 
         static void StaticPrint(object? message)

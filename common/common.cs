@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Reflection;
-
-namespace Samples
+﻿namespace common
 {
-    class Common
+    public class Common
     {
         public static string separator = "-----------------------------------------------------------------";
 
@@ -22,9 +14,10 @@ namespace Samples
         }
 
         public static void waitThreads(
-            List<Thread> threads, 
-            bool isWriteWaitProcess=true
-        ) {
+            List<Thread> threads,
+            bool isWriteWaitProcess = true
+        )
+        {
             while (true)
             {
                 bool isFinished = true;
@@ -35,7 +28,8 @@ namespace Samples
                     bool isThreadAlive = 0 == (thread.ThreadState & (ThreadState.Stopped | ThreadState.Aborted));
                     if (isThreadAlive)
                     {
-                        if (isWriteWaitProcess) {
+                        if (isWriteWaitProcess)
+                        {
                             Console.WriteLine($"MainThread: found alive thread {thread.Name}");
                         }
                         isFinished = false;
@@ -60,7 +54,4 @@ namespace Samples
         }
 
     }
-
-
 }
-

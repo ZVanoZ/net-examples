@@ -14,8 +14,8 @@ namespace Samples
     {
         public static void Run()
         {
-            Common.WriteSeparator();
-            Common.WriteSeparateString(typeof(Sample0020).Name);
+            common.Common.WriteSeparator();
+            common.Common.WriteSeparateString(typeof(Sample0020).Name);
 
             Thread myThread1 = new Thread(Print);
             Thread myThread2 = new Thread(new ThreadStart(Print));
@@ -34,7 +34,7 @@ namespace Samples
             myThread3.Join();
             myThread4.Join();
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
 
         static void StaticPrint()

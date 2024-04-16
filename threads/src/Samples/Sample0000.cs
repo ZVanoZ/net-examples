@@ -16,13 +16,13 @@ namespace Samples
         public static void Run()
         {
 
-            Common.WriteSeparator();
-            //Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
-            Common.WriteSeparateString(typeof(Sample0000).Name);
+            common.Common.WriteSeparator();
+            //common.Common.WriteSeparateString(MethodBase.GetCurrentMethod().Name);
+            common.Common.WriteSeparateString(typeof(Sample0000).Name);
 
             Console.WriteLine("@TODO: ...");
 
-            Common.WriteSeparator();
+            common.Common.WriteSeparator();
         }
     }
 
