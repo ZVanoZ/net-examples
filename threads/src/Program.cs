@@ -22,7 +22,13 @@
 
 //new Samples.Synchronize.Sample0005().Run();
 //new Samples.Synchronize.Sample0010().Run();
-new Samples.Synchronize.Sample0015().Run();
+
+//new Samples.Synchronize.Sample0015().Run();
+//new Samples.Synchronize.Sample0015lock().Run();
+//new Samples.Synchronize.Sample0015Monitor().Run();
+//new Samples.Synchronize.Sample0015AutoResetEvent().Run();
+//new Samples.Synchronize.Sample0015Mutex().Run();
+new Samples.Synchronize.Sample0015Semaphore().Run();
 
 //-----------------------------------------------------------------------------
 
