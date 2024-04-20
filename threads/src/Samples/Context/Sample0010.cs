@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Samples;
-using common;
+﻿using common;
 
 namespace Samples.Context
 {
     /**
     * Читаем контекст дочернего потока из главного потока.
+    * Синхронизация доступа через Mutex.
     */
     public class Sample0010
     {
         const int COUNT_THREAD = 3;
-        const int COUNT_ITERATION = 10;
         public void Run()
         {
 
@@ -27,16 +19,17 @@ namespace Samples.Context
 
 
             List<Context> contexts = new List<Context>();
-            List<string> conflicts = new List<string>();
 
             for (int i = COUNT_THREAD; i > 0; i--)
             {
                 string fileName = $"file-{i}";
-                Context context = new Context($"inpDir/{fileName}", $"outDir/{fileName}");
-                Thread thread = new Thread(context.ThreadBody);
-                context.thread = thread;
+                Context context = new Context(
+                    $"inpDir/{fileName}",
+                    $"outDir/{fileName}"
+                );
+
                 contexts.Add(context);
-                thread.Start();
+                context.thread.Start();
             }
 
             // В текущем потоке организовываем цикл, который будет проверять статус выполнения задачь в дочерних потоках.
@@ -75,18 +68,24 @@ namespace Samples.Context
         {
             public Thread thread;
             public Mutex mutex = new Mutex();
+
             public string copyFrom;
             public string copyTo;
+
             public int fileSize = 0;
             public int copySpeed = 0;
+
 
             /**
              * Свойство "percent" используется между потоками.
              * Доступ к нему нужно синхронизировать/
              */
             public int percent = 0;
-            public int Percent { 
-                get {
+
+            public int Percent
+            {
+                get
+                {
                     // Синхронизация доступа инкапсулирована в методе
                     mutex.WaitOne();
                     int result = percent;
@@ -94,9 +93,13 @@ namespace Samples.Context
 
                     Console.WriteLine($"{Common.GetStrThreads(this.thread)} : Context.Percent.get : percent = {result}");
 
-                    return percent; 
-                } 
+                    return percent;
+                }
             }
+
+            /**
+             * Конструктор контекста потока.
+             */
             public Context(
                 string copyFrom,
                 string copyTo
@@ -105,27 +108,32 @@ namespace Samples.Context
                 this.copyFrom = copyFrom;
                 this.copyTo = copyTo;
                 Random random = new Random();
-                this.fileSize = random.Next(1, 10000);  
-                this.copySpeed= 1 + random.Next(this.fileSize / 10, this.fileSize/3);
+                this.fileSize = random.Next(1, 10000);
+                this.copySpeed = 1 + random.Next(this.fileSize / 10, this.fileSize / 3);
+                this.thread = new Thread(this.ThreadBody);
                 Console.WriteLine(
-                    $"{Common.GetStrThread()} : Context.constructor :" 
-                    + $" copyFrom = {copyFrom};" 
-                    + $" copyTo = {copyTo};" 
+                    $"{Common.GetStrThread()} : Context.constructor :"
+                    + $" inner-thread-id = {this.thread.ManagedThreadId};"
+                    + $" copyFrom = {copyFrom};"
+                    + $" copyTo = {copyTo};"
                     + $" fileSize = {fileSize};"
                     + $" copySpeed = {copySpeed};"
                 );
 
             }
 
-
-            public void ThreadBody()
+            /**
+             * Тело потока
+             */ 
+            protected void ThreadBody()
             {
                 Console.WriteLine($"{Common.GetStrThreads(this.thread)} : Context.ThreadBody : BEG  : {this.copyFrom}");
                 int copiedBytes = 0;
-                while (copiedBytes < this.fileSize) {
+                while (copiedBytes < this.fileSize)
+                {
                     copiedBytes += this.copySpeed;
                     copiedBytes = copiedBytes > this.fileSize ? this.fileSize : copiedBytes;
-                    
+
                     // При обращении к свойствам совместного доступа нужно синхронизировать доступ
                     mutex.WaitOne();
                     this.percent = 100 * copiedBytes / fileSize;
