@@ -11,6 +11,7 @@ namespace MyNamespace
     {
         static void Main()
         {
+            Console.WriteLine($"Main: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             Console.WriteLine($"== dir:{AppDomain.CurrentDomain.BaseDirectory}");
             //string monitorDir = AppDomain.CurrentDomain.BaseDirectory;
             string monitorDir = "c:\\tmp\\";
@@ -42,6 +43,8 @@ namespace MyNamespace
 
         private static void OnChanged(object sender, FileSystemEventArgs e)
         {
+            Console.WriteLine($"OnChanged: thread-id:{Thread.CurrentThread.ManagedThreadId}");
+
             if (e.ChangeType != WatcherChangeTypes.Changed)
             {
                 return;
@@ -51,15 +54,20 @@ namespace MyNamespace
 
         private static void OnCreated(object sender, FileSystemEventArgs e)
         {
+            Console.WriteLine($"OnCreated: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             string value = $"Created: {e.FullPath}";
             Console.WriteLine(value);
         }
 
-        private static void OnDeleted(object sender, FileSystemEventArgs e) =>
+        private static void OnDeleted(object sender, FileSystemEventArgs e)
+        {
+            Console.WriteLine($"OnDeleted: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             Console.WriteLine($"Deleted: {e.FullPath}");
+        }
 
         private static void OnRenamed(object sender, RenamedEventArgs e)
         {
+            Console.WriteLine($"OnRenamed: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             Console.WriteLine($"Renamed:");
             Console.WriteLine($"    Old: {e.OldFullPath}");
             Console.WriteLine($"    New: {e.FullPath}");
@@ -70,14 +78,14 @@ namespace MyNamespace
             ErrorEventArgs errEvent
         )
         {
-            Console.WriteLine("OnError: ");
+            Console.WriteLine($"OnError: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             Exception errException = errEvent.GetException();
             PrintException(errException);
         }
 
         private static void PrintException(Exception? ex)
         {
-            Console.WriteLine("PrintException:");
+            Console.WriteLine($"PrintException: thread-id:{Thread.CurrentThread.ManagedThreadId}");
             if (ex == null)
             {
                 Console.WriteLine("PrintException: @skip: ex is null");
