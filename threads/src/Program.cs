@@ -28,7 +28,11 @@
 //new Samples.Synchronize.Sample0015Monitor().Run();
 //new Samples.Synchronize.Sample0015AutoResetEvent().Run();
 //new Samples.Synchronize.Sample0015Mutex().Run();
-new Samples.Synchronize.Sample0015Semaphore().Run();
+// new Samples.Synchronize.Sample0015Semaphore().Run();
+
+
+//-----------------------------------------------------------------------------
+new Samples.Context.Sample0010().Run();
 
 //-----------------------------------------------------------------------------
 
