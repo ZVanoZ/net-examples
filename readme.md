@@ -9,8 +9,17 @@
 
 * learn.microsoft.com : csharp
   * [Документация по языку C#](https://learn.microsoft.com/ru-ru/dotnet/csharp/)  
-    * [Ключевые слова C#](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/)  
-    * [Asynchronous programming with async and await](https://learn.microsoft.com/ru-ru/dotnet/csharp/asynchronous-programming/)
+    * [Ключевые слова C#](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/) dictionary
+    * [Asynchronous programming with async and await](https://learn.microsoft.com/ru-ru/dotnet/csharp/asynchronous-programming/) manual
+* learn.microsoft.com : dotnet
+  * [Инструмент определения схемы XML (Xsd.exe)](https://learn.microsoft.com/ru-ru/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe)
+* learn.microsoft.com : API .NET 4.8
+  * [System.Data](https://learn.microsoft.com/ru-ru/dotnet/api/system.data?view=netframework-4.8) namespace
+    * [System.Data.DataSet](https://learn.microsoft.com/ru-ru/dotnet/api/system.data.dataset?view=netframework-4.8) class 
+      * [Типизированные наборы данных](https://learn.microsoft.com/ru-ru/dotnet/framework/data/adonet/dataset-datatable-dataview/typed-datasets) manual
+        * [Создание строго типизированных наборов данных](https://learn.microsoft.com/ru-ru/dotnet/framework/data/adonet/dataset-datatable-dataview/generating-strongly-typed-datasets)  
+          ??? Непонятно. При помощи xsd.exe на основании файла *.xsd генерируется *.cs с набором классов. 
+    * [System.Data.DataTable](https://learn.microsoft.com/ru-ru/dotnet/api/system.data.datatable?view=netframework-4.8) class 
 * learn.microsoft.com : API .NET 8 
   * [System.Threading](https://learn.microsoft.com/ru-ru/dotnet/api/system.threading?view=net-8.0) namespace
     * [System.Threading.ThreadState](https://learn.microsoft.com/ru-ru/dotnet/api/system.threading.threadstate?view=net-8.0) enum
