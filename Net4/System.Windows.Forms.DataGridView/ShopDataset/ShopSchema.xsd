@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ShopDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ShopDataSet" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_UserDSName="ShopDataSet" msprop:Generator_DataSetName="ShopDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Books" msprop:Generator_RowEvHandlerName="BooksRowChangeEventHandler" msprop:Generator_RowDeletedName="BooksRowDeleted" msprop:Generator_RowDeletingName="BooksRowDeleting" msprop:Generator_RowEvArgName="BooksRowChangeEvent" msprop:Generator_TablePropName="Books" msprop:Generator_RowChangedName="BooksRowChanged" msprop:Generator_UserTableName="Books" msprop:Generator_RowChangingName="BooksRowChanging" msprop:Generator_RowClassName="BooksRow" msprop:Generator_TableClassName="BooksDataTable" msprop:Generator_TableVarName="tableBooks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="Price" msdata:Caption="price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_UserColumnName="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" type="xs:string" />
+              <xs:element name="CreatedAt" msprop:Generator_ColumnPropNameInTable="CreatedAtColumn" msprop:Generator_ColumnPropNameInRow="CreatedAt" msprop:Generator_UserColumnName="CreatedAt" msprop:Generator_ColumnVarNameInTable="columnCreatedAt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Author_ID" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="Author_IDColumn" msprop:Generator_ColumnPropNameInRow="Author_ID" msprop:Generator_UserColumnName="Author_ID" msprop:Generator_ColumnVarNameInTable="columnAuthor_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Authors" msprop:Generator_RowEvHandlerName="AuthorsRowChangeEventHandler" msprop:Generator_RowDeletedName="AuthorsRowDeleted" msprop:Generator_RowDeletingName="AuthorsRowDeleting" msprop:Generator_RowEvArgName="AuthorsRowChangeEvent" msprop:Generator_TablePropName="Authors" msprop:Generator_RowChangedName="AuthorsRowChanged" msprop:Generator_UserTableName="Authors" msprop:Generator_RowChangingName="AuthorsRowChanging" msprop:Generator_RowClassName="AuthorsRow" msprop:Generator_TableClassName="AuthorsDataTable" msprop:Generator_TableVarName="tableAuthors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Firstname" msprop:Generator_ColumnPropNameInTable="FirstnameColumn" msprop:Generator_ColumnPropNameInRow="Firstname" msprop:Generator_UserColumnName="Firstname" msprop:Generator_ColumnVarNameInTable="columnFirstname" type="xs:string" />
+              <xs:element name="Middlename" msprop:Generator_ColumnPropNameInTable="MiddlenameColumn" msprop:Generator_ColumnPropNameInRow="Middlename" msprop:Generator_UserColumnName="Middlename" msprop:Generator_ColumnVarNameInTable="columnMiddlename" type="xs:string" minOccurs="0" />
+              <xs:element name="Lastname" msprop:Generator_ColumnPropNameInTable="LastnameColumn" msprop:Generator_ColumnPropNameInRow="Lastname" msprop:Generator_UserColumnName="Lastname" msprop:Generator_ColumnVarNameInTable="columnLastname" type="xs:string" minOccurs="0" />
+              <xs:element name="Birthday" msprop:Generator_ColumnPropNameInTable="BirthdayColumn" msprop:Generator_ColumnPropNameInRow="Birthday" msprop:Generator_UserColumnName="Birthday" msprop:Generator_ColumnVarNameInTable="columnBirthday" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//Books" />
+      <xs:field xpath="ID" />
+    </xs:unique>
+    <xs:unique name="Authors_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//Authors" />
+      <xs:field xpath="ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Authors_Books" msdata:parent="Authors" msdata:child="Books" msdata:parentkey="ID" msdata:childkey="Author_ID" msprop:Generator_UserParentTable="Authors" msprop:Generator_UserChildTable="Books" msprop:Generator_RelationVarName="relationAuthors_Books" msprop:Generator_UserRelationName="Authors_Books" msprop:Generator_ChildPropName="GetBooksRows" msprop:Generator_ParentPropName="AuthorsRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
