@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using System.Xml;
 
 namespace DemoTypedDataset
 {
@@ -13,9 +6,19 @@ namespace DemoTypedDataset
     {
         static void Main(string[] args)
         {
-            DemoBoocsClasses.run();
+            Console.WriteLine("-".PadLeft(80, '-'));
 
-            DemoBoocsDataset.run();
+            DemoBooksClasses.run();
+
+            Console.WriteLine("-".PadLeft(80, '-'));
+
+            DemoBooksDataset.run();
+
+            Console.WriteLine("-".PadLeft(80, '-'));
+
+            DemoShopDataset.run();
+
+            Console.WriteLine("-".PadLeft(80, '-'));
 
             Console.WriteLine("Press enter");
             Console.ReadLine();

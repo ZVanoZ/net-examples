@@ -25,7 +25,6 @@ copy c:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x6
 
 @rem --------------------------------------------------------------------------
 
-
 @rem BooksSchema.xml >> BooksSchema.xsd
 xsd.exe BooksSchema.xml
 @rem BooksSchema.xsd >> BooksSchema.cs
@@ -35,6 +34,11 @@ move BooksSchema.cs BooksClasses.cs
 
 xsd.exe /dataset BooksSchema.xsd /enableLinqDataSet /namespace:DemoTypedDataset.BooksDataset
 move BooksSchema.cs BooksDataset.cs
+
+@rem --------------------------------------------------------------------------
+
+xsd.exe /dataset ShopSchema.xsd /enableLinqDataSet /namespace:DemoTypedDataset.ShopSchemaDataset
+move ShopSchema.cs ShopSchemaDataset.cs
 
 @rem --------------------------------------------------------------------------
 

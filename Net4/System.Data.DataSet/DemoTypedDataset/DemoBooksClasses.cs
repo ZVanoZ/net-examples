@@ -9,7 +9,7 @@ using DemoTypedDataset.BooksClasses;
 
 namespace DemoTypedDataset
 {
-    public class DemoBoocsClasses
+    public class DemoBooksClasses
     {
         public static void run() {
             Console.WriteLine("-- DemoBoocsClasses::run/BEG");

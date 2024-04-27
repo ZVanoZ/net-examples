@@ -43,27 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DemoBoocsDataset.cs" />
+    <Compile Include="DemoShopDataset.cs" />
+    <Compile Include="data\ShopSchemaDataset.cs" />
+    <Compile Include="DemoBooksDataset.cs" />
     <Compile Include="data\BooksClasses.cs" />
     <Compile Include="data\BooksDataset.cs" />
-    <Compile Include="DemoBoocsClasses.cs" />
-    <Compile Include="data\MySchema.cs">
-      <DependentUpon>MySchema.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="DemoBooksClasses.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="data\create-classes-from-schema.bat" />
-    <None Include="data\MySchema.xsc">
-      <DependentUpon>MySchema.xsd</DependentUpon>
+    <None Include="data\create-cs-from-xml.bat" />
+    <None Include="data\ShopSchema.xsc">
+      <DependentUpon>ShopSchema.xsd</DependentUpon>
     </None>
-    <None Include="data\MySchema.xsd">
+    <None Include="data\ShopSchema.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="data\MySchema.xss">
-      <DependentUpon>MySchema.xsd</DependentUpon>
+    <None Include="data\ShopSchema.xss">
+      <DependentUpon>ShopSchema.xsd</DependentUpon>
     </None>
     <None Include="data\BooksSchema.xsd">
       <SubType>Designer</SubType>
