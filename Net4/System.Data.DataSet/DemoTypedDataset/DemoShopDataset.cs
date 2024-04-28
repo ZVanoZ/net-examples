@@ -1,11 +1,4 @@
-﻿/*
- * https://learn.microsoft.com/ru-ru/dotnet/csharp/linq/
- * https://learn.microsoft.com/ru-ru/dotnet/framework/data/adonet/queries-in-linq-to-dataset
- * https://learn.microsoft.com/ru-ru/dotnet/csharp/linq/get-started/write-linq-queries
- * https://learn.microsoft.com/ru-ru/dotnet/csharp/linq/get-started/walkthrough-writing-queries-linq
- * 
- * [Синтаксис LINQ](https://learn.microsoft.com/ru-ru/dotnet/csharp/linq/)
- */
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoShopDataset", "DemoShopDataset\DemoShopDataset.csproj", "{34003664-C504-4095-91B2-E8FFA64F0355}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSchema", "ShopDataset\ShopSchema.csproj", "{3AA93D02-75D1-4CBF-9996-12EAC757C241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleShopSchema", "ShopDataset\ModuleShopSchema.csproj", "{3AA93D02-75D1-4CBF-9996-12EAC757C241}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

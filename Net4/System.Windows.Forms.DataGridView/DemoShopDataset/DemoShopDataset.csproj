@@ -66,7 +66,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\ShopSchema.ShopDataSet.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+AuthorsDataTable.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+AuthorsRow.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+AuthorsRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+AuthorsRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+BooksDataTable.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+BooksRow.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+BooksRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet+BooksRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ShopDataset.ShopDataSet.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+AuthorsDataTable1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+AuthorsRow1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+AuthorsRowChangeEvent1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+AuthorsRowChangeEventHandler1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+BooksDataTable1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+BooksRow1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+BooksRowChangeEvent1.datasource" />
+    <None Include="Properties\DataSources\ShopSchema.ShopDataSet+BooksRowChangeEventHandler1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,9 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShopDataset\ShopSchema.csproj">
+    <ProjectReference Include="..\ShopDataset\ModuleShopSchema.csproj">
       <Project>{3aa93d02-75d1-4cbf-9996-12eac757c241}</Project>
-      <Name>ShopSchema</Name>
+      <Name>ModuleShopSchema</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
