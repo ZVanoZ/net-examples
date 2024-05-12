@@ -43,6 +43,7 @@
 ### learn.microsoft.com : dotnet/csharp
 
 * [Документация по языку C#](https://learn.microsoft.com/ru-ru/dotnet/csharp/)  
+  ([dotnet-csharp.pdf](https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fru-ru%2Fdotnet%2Fcsharp%2Ftoc.json) ~37МБ)
   * [Ключевые слова C#](https://learn.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/) dictionary
   * [Asynchronous programming with async and await](https://learn.microsoft.com/ru-ru/dotnet/csharp/asynchronous-programming/) manual
 * [Синтаксис LINQ](https://learn.microsoft.com/ru-ru/dotnet/csharp/linq/)
@@ -76,6 +77,8 @@
 
 ### .NET 4
 
+* "\Learn\.NET\winforms" - Руководство по рабочему столу .NET для Windows Forms  
+[Скачать PDF\dotnet-desktop-winforms-netframeworkdesktop-4.8.pdf](https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fru-ru%2Fdotnet%2Fdesktop%2Fwinforms%2Ftoc.json%3Fview%3Dnetframeworkdesktop-4.8)
 * [System.Data](https://learn.microsoft.com/ru-ru/dotnet/api/system.data?view=netframework-4.8) namespace
   * [System.Data.DataSet](https://learn.microsoft.com/ru-ru/dotnet/api/system.data.dataset?view=netframework-4.8) class
   * [System.Data.DataTable](https://learn.microsoft.com/ru-ru/dotnet/api/system.data.datatable?view=netframework-4.8) class
@@ -96,6 +99,43 @@
 
 ### Visual Studio
 
+* [Индекс/Документация по интегрированной среде разработки Visual Studio](https://learn.microsoft.com/ru-ru/visualstudio/ide/?view=vs-2022)
+  [Скачать PDF\visualstudio-vs-2022.pdf](https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fru-ru%2Fvisualstudio%2Ftoc.json%3Fview%3Dvs-2022)
+```text
+Слева снизу есть кнопка "Скачать PDF".
+Жамкаем и получаем оффлайн версию размером около 120МБ 
+```
+* [Сочетания клавиш в Visual Studio](Сочетания клавиш в Visual Studio)
+* [Панель инструментов](https://learn.microsoft.com/ru-ru/visualstudio/ide/reference/toolbox?view=vs-2022)
+```
+Справочные материалы
+Вкладка "Компоненты", панель элементов
+Панель элементов, вкладка "Данные"
+Вкладка HTML, панель элементов
+```
+* [Справочные материалы\Общие элементы пользовательского интерфейса\Вставка JSON или XML в качестве классов](https://learn.microsoft.com/ru-ru/visualstudio/ide/reference/paste-json-xml?view=vs-2022)
+* [Learn\Visual Studio\Работа с данными\Работа с данными в Visual Studio](https://learn.microsoft.com/ru-ru/visualstudio/data-tools/accessing-data-in-visual-studio?view=vs-2022)
+  [Скачать PDF\visualstudio-data-tools-vs-2022.pdf](https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fru-ru%2Fvisualstudio%2Fdata-tools%2Ftoc.json%3Fview%3Dvs-2022)
+````
+Пошаговое руководство. Создание классов LINQ to SQL с помощью наследования одной таблицы (конструктор O/R)
+Наборы данных и XML
+Создание базы данных и добавление таблиц в приложениях платформа .NET Framework с помощью Visual Studio
+Подключение в базу данных в Visual Studio
+Сохранение и изменение строка подключения базы данных для приложений платформа .NET Framework
+Добавление новых источников данных в приложениях ADO.NET (платформа .NET Framework)
+Инструменты LINQ to SQL в Visual Studio
+````
+  * [Пошаговое руководство. Создание dataTable для приложений платформа .NET Framework с помощью конструктора наборов данных](https://learn.microsoft.com/ru-ru/visualstudio/data-tools/walkthrough-creating-a-datatable-in-the-dataset-designer?view=vs-2022)  
+  ````
+  Это руководство позволяет при помощи конструктора создать *.XSD файл с локальной схемой DataSet.
+  Почему-то в PDF эта статья отсутствует! Отправил сообщение в форме обратной связи.
+  ````
+  * 
+* [Learn\Visual Studio\XML-инструменты](https://learn.microsoft.com/ru-ru/visualstudio/xml-tools/xml-schema-designer?view=vs-2022)
+  [Скачать PDF\visualstudio-xml-tools-vs-2022.pdf](https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fru-ru%2Fvisualstudio%2Fxml-tools%2Ftoc.json%3Fview%3Dvs-2022)
+```text
+
+```
 * [Работа с наборами данных в Visual Studio](https://learn.microsoft.com/ru-ru/previous-versions/8bw9ksd6(v=vs.140))
 * [Практическое руководство. Открытие набора данных в конструкторе наборов данных](https://learn.microsoft.com/ru-ru/previous-versions/7973zb70(v=vs.140))
 * [Практическое руководство. Редактирование набора данны](https://learn.microsoft.com/ru-ru/previous-versions/76ah1sx7(v=vs.140))
